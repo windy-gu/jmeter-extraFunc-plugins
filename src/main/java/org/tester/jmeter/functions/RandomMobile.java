@@ -29,6 +29,9 @@ public class RandomMobile extends AbstractFunction {
         checkParameterCount(collection, 0, 0);
     }
 
+    /**
+     * 提供jmeter函数助手显示的下来选项名称
+     **/
     @Override
     public String getReferenceKey() {
         return "__RandomMobile";

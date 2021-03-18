@@ -135,6 +135,7 @@ public class RandomString {
         final String numbers = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9";
         String[] seven = {"76", "96", "31", "71", "88", "97", "38", "18"};
         if (temp.equals("12")){
+            // 当号段为12时，后续号码长度为6，7
             final String randomLength = "6, 7";
             int length = Integer.parseInt(getRange(randomLength, 1));
             for (int i = 0; i < length - 1; i++){
@@ -143,18 +144,18 @@ public class RandomString {
             return "8550" + buf.toString();
         }
         else if(Arrays.asList(seven).contains(temp)){
+            // 当号段为在seven数据时，后续号码长度为7
             for (int k = 0; k < 6; k++){
                 buf.append(getRange(numbers, 1));
             }
             return "8550" + buf.toString();
-
         }
         else {
+            // 其他，后续号码长度为6
             for (int l = 0; l < 5; l++){
                 buf.append(getRange(numbers, 1));
             }
             return "8550" + buf.toString();
-
         }
 
     }
