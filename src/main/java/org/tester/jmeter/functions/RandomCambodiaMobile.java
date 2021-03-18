@@ -16,7 +16,7 @@ import java.util.List;
 public class RandomCambodiaMobile extends AbstractFunction{
     @Override
     public String execute(SampleResult sampleResult, Sampler sampler) throws InvalidVariableException {
-        return RandomString.getMobile();
+        return RandomString.getCambodiaMobile();
     }
     @Override
     public void setParameters(Collection<CompoundVariable> collection) throws InvalidVariableException {
