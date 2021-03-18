@@ -1,27 +1,27 @@
-package org.smooth.jmeter.functions;
+package org.tester.jmeter.functions;
 
 import org.apache.jmeter.engine.util.CompoundVariable;
 import org.apache.jmeter.functions.AbstractFunction;
 import org.apache.jmeter.functions.InvalidVariableException;
 import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.samplers.Sampler;
-import org.smooth.jmeter.functions.core.IdCardGenerator;
+import org.tester.jmeter.functions.core.RandomString;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 随机生成身份证号
+ * 随机生成IPv4
  * @author smooth00
- * @date 2019-12-04 15:39
+ * @date 2019-12-02 13:15
  */
 @SuppressWarnings("unchecked")
-public class RandomIdCardNo extends AbstractFunction {
+public class RandomIP extends AbstractFunction {
 
     @Override
     public String execute(SampleResult sampleResult, Sampler sampler) throws InvalidVariableException {
-        return IdCardGenerator.getIdCardNo();
+        return RandomString.getIp();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class RandomIdCardNo extends AbstractFunction {
 
     @Override
     public String getReferenceKey() {
-        return "__RandomIdCardNo";
+        return "__RandomIP";
     }
 
     public List<String> getArgumentDesc() {

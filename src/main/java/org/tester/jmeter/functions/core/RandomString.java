@@ -1,5 +1,8 @@
-package org.smooth.jmeter.functions.core;
+package org.tester.jmeter.functions.core;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -30,6 +33,14 @@ public class RandomString {
             {-770113536, -768606209}, // 210.25.0.0-210.47.255.255
             {-569376768, -564133889}, // 222.16.0.0-222.95.255.255
     };
+
+    /** 柬埔寨 可用号段 */
+    private static final String[] CAMBODIA_MOBILE_SEGMENT = {
+            "11", "12", "14", "17", "61", "76", "77", "78", "79", "85",
+            "89", "92", "95", "99", "10", "15", "16", "69", "70", "81",
+            "86", "87", "93", "96", "98", "31", "60", "66", "67", "68",
+            "71", "88", "90", "97","13", "80", "83", "84", "38", "18" };
+
 
     /**
      * 获取0到指定数值间的随机数，内部使用
@@ -111,6 +122,43 @@ public class RandomString {
         return buf.toString();
     }
 
+
+
+    /**
+     * 生成随机柬埔寨手机号码
+     * @return
+     */
+    public static String getCambodiaMobile() {
+        int index = getRandomNum(CAMBODIA_MOBILE_SEGMENT.length);
+        StringBuffer buf = new StringBuffer(MOBILE_SEGMENT[index]);
+        String temp = buf.toString();
+        final String numbers = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9";
+        String[] seven = {"76", "96", "31", "71", "88", "97", "38", "18"};
+        if (temp.equals("12")){
+            final String randomLength = "6, 7";
+            int length = Integer.parseInt(getRange(randomLength, 1));
+            for (int i = 0; i < length - 1; i++){
+                buf.append(getRange(numbers, 1));
+            }
+            return "8550" + buf.toString();
+        }
+        else if(Arrays.asList(seven).contains(temp)){
+            for (int k = 0; k < 6; k++){
+                buf.append(getRange(numbers, 1));
+            }
+            return "8550" + buf.toString();
+
+        }
+        else {
+            for (int l = 0; l < 5; l++){
+                buf.append(getRange(numbers, 1));
+            }
+            return "8550" + buf.toString();
+
+        }
+
+    }
+
     /**
      * 生成uuid
      **/
@@ -145,6 +193,8 @@ public class RandomString {
     }
 
     public static void main(String[] args) throws Exception {
+        String temp = RandomString.getCambodiaMobile();
+        System.out.println("随机柬埔寨号码:" +temp);
         String str = RandomString.getFixed(6);
         System.out.println("随机普通字符串:" + str);
         str = RandomString.getRange("999001, 999002, 999003", 1);
