@@ -1,6 +1,7 @@
 package org.tester.jmeter.functions.core;
 
 import java.lang.reflect.Array;
+import java.net.URLDecoder;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -130,7 +131,7 @@ public class RandomString {
      */
     public static String getCambodiaMobile() {
         int index = getRandomNum(CAMBODIA_MOBILE_SEGMENT.length);
-        StringBuffer buf = new StringBuffer(MOBILE_SEGMENT[index]);
+        StringBuffer buf = new StringBuffer(CAMBODIA_MOBILE_SEGMENT[index]);
         String temp = buf.toString();
         final String numbers = "0, 1, 2, 3, 4, 5, 6, 7, 8, 9";
         String[] seven = {"76", "96", "31", "71", "88", "97", "38", "18"};

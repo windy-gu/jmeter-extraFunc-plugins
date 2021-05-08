@@ -38,17 +38,33 @@ public class RandomCambodiaMobile extends AbstractFunction{
     }
 
     /**
-     * 提供jmeter函数助手显示的下来选项名称
+     * function名称
+     */
+    private static final String KEY = "__RandomCambodiaMobile";
+
+
+    /**
+     * function描述
+     */
+    private static final List<String> DESC = new LinkedList<String>();
+
+    static {
+        DESC.add("随机输出柬埔寨号码");
+    }
+
+    /**
+     * 提供jmeter函数助手显示的选项名称 & 引用关键字
      **/
     @Override
     public String getReferenceKey() {
-        return "__RandomCambodiaMobile";
+        return KEY;
     }
+
 
     /**
      * function的描述
      */
     public List<String> getArgumentDesc() {
-        return new LinkedList();
+        return DESC;
     }
 }
