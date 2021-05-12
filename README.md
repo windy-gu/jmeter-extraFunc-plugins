@@ -32,7 +32,7 @@ public List<String> getArgumentDesc();
 
 - 1、clone到本地
 ```bash
-git clone https://gitee.com/smooth00/jmeter-ExtraFunc-plugins.git
+git clone git url 地址
 ```
 
 - 2、编译打包
