@@ -139,21 +139,21 @@ public class RandomString {
             // 当号段为12时，后续号码长度为6，7
             final String randomLength = "6, 7";
             int length = Integer.parseInt(getRange(randomLength, 1));
-            for (int i = 0; i < length - 1; i++){
+            for (int i = 0; i < length; i++){
                 buf.append(getRange(numbers, 1));
             }
             return "8550" + buf.toString();
         }
         else if(Arrays.asList(seven).contains(temp)){
             // 当号段为在seven数据时，后续号码长度为7
-            for (int k = 0; k < 6; k++){
+            for (int k = 0; k < 7; k++){
                 buf.append(getRange(numbers, 1));
             }
             return "8550" + buf.toString();
         }
         else {
             // 其他，后续号码长度为6
-            for (int l = 0; l < 5; l++){
+            for (int l = 0; l < 6; l++){
                 buf.append(getRange(numbers, 1));
             }
             return "8550" + buf.toString();

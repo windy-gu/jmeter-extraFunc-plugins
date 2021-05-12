@@ -37,6 +37,7 @@ git clone https://gitee.com/smooth00/jmeter-ExtraFunc-plugins.git
 
 - 2、编译打包
 ```bash
+mac系统 建议先执行 source ~/.bash_profile
 cd jmeter-ExtraFunc-plugins
 mvn clean install
 ```
