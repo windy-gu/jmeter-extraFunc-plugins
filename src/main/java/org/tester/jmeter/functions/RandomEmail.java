@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * 随机生成电子邮箱
- * @author smooth
+ * @author Windy
  * @date 2019-12-02 13:15
  */
 @SuppressWarnings("unchecked")
