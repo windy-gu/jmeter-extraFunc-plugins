@@ -20,30 +20,46 @@ import java.util.List;
 public class UrlEncode extends AbstractFunction {
 
     /**
-     * function描述
+     * function描述，在函数助手中函数参数中显示内容
      */
     private static final List<String> DESC = new LinkedList<String>();
 
     static {
-        DESC.add("输入需要encode内容：");
+        DESC.add("请输入api地址：");
+        DESC.add("请输入body参数：");
     }
 
 
-    private CompoundVariable data;
+    private CompoundVariable api;
+    private CompoundVariable body;
 
+    /**
+     * function执行的主题
+     * @param sampleResult
+     * @param sampler
+     * @return 返回encode加密后的数据
+     * @throws InvalidVariableException
+     */
     @Override
     public String execute(SampleResult sampleResult, Sampler sampler) throws InvalidVariableException {
         String dataEncode = "";
-        String data = this.data.execute().trim();
-        dataEncode = UrlEncodeUtil.urlencode(data);
+        String api = this.api.execute().trim();
+        String body = this.body.execute().trim();
+        dataEncode = UrlEncodeUtil.urlencode(api, body);
         return dataEncode;
     }
 
+    /**
+     *
+     * @param parameters 入参
+     * @throws InvalidVariableException
+     */
     @Override
     public void setParameters(Collection<CompoundVariable> parameters) throws InvalidVariableException {
         // 定义调用时，所需要的入参
-        checkParameterCount(parameters, 1, 1);
-        data = (CompoundVariable) parameters.toArray()[0];
+        checkParameterCount(parameters, 2, 2);
+        api = (CompoundVariable) parameters.toArray()[0];
+        body = (CompoundVariable) parameters.toArray()[1];
     }
 
     /**
