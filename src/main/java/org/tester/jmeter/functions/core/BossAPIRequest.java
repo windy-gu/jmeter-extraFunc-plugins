@@ -1,7 +1,6 @@
 package org.tester.jmeter.functions.core;
 import org.json.simple.JSONObject;
 
-import java.net.URLEncoder;
 
 public class BossAPIRequest {
     /**
