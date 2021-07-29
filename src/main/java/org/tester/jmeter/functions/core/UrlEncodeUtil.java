@@ -9,9 +9,14 @@ public class UrlEncodeUtil {
      * @date 2021-5-02 13:15
      */
     public static String urlencode(String api, String body) {
-        String request_data  = BossAPIRequest.apiQueryData(api, body);
+        String request_data  = apiQueryData(api, body);
         String encode = URLEncoder.encode(request_data);
         return encode;
+    }
+
+    public static String apiQueryData(String api, String body) {
+        String request_data = "{\"apiUrl\":\"" + api + "\",\"apiData\":" + body + "}";
+        return request_data;
     }
 
     public static void main(String[] args) {
