@@ -55,3 +55,5 @@ mvn clean install
 | __RandomEmail | ```${__RandomEmail}```| 生成随机电子邮箱 |
 | __RandomIP | ```${__RandomIP}```| 生成随机IPv4地址 |
 | __RandomIdCardNo | ```${__RandomIdCardNo}```| 生成随机身份证号（满足标准校验规则） |
+| __UrlEncode | ```${__UrlEncode(api_str,body_str)}```| 适用于UrlEncode加密 |
+| __RandomCambodiaMobile | ```${__RandomCambodiaMobile}```| 生成随机柬埔寨手机号码 |
