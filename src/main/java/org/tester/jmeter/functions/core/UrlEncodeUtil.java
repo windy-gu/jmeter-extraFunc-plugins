@@ -20,7 +20,7 @@ public class UrlEncodeUtil {
     }
 
     public static void main(String[] args) {
-        String temp = urlencode("https://boss-uat.lifekh.com/takeaway-delivery/boss/delivery-order/assign-rider/action.do","{\"orderCodes\":[\"1390962995715891200\"],\"riderId\":10004}");
+        String temp = urlencode("https://boss-uat.lifekh.com/takeaway-delivery/boss/delivery-order/assign-rider/action.do","{\"loginName\":\"jmeter\",\"password\":\"45f33a4881ff5f7c1525c9447cde26fd\",\"captcha\":\"\"}}");
         System.out.println("Test data:" +temp);
     }
 }

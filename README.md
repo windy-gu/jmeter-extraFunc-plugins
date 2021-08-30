@@ -37,7 +37,8 @@ git clone git url 地址
 
 - 2、编译打包
 ```bash
-mac系统 建议先执行 source ~/.bash_profile
+/** mac系统 建议先执行 source ~/.bash_profile */
+source ~/.bash_profile
 cd jmeter-ExtraFunc-plugins
 mvn clean install
 ```
