@@ -34,6 +34,7 @@ public class UrlEncode extends AbstractFunction {
     private CompoundVariable body;
 
     /**
+     *
      * function执行的主题
      * @param sampleResult
      * @param sampler

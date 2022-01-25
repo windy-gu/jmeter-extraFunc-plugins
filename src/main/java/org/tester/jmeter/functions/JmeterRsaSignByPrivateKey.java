@@ -65,7 +65,7 @@ public class JmeterRsaSignByPrivateKey extends AbstractFunction {
         String dataSign = "";
         String unSignData = this.unSignData.execute().trim();
         String privateKey = this.privateKey.execute().trim();
-        log.info("开发平台待加签内容={}", unSignData);
+        log.info("待加签内容={}", unSignData);
         dataSign = RsaSignByPrivateKey.rsaSignByPrivateKey(unSignData, privateKey);
         return dataSign;
     }
