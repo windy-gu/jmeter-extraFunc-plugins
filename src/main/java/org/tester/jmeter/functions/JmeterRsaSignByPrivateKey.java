@@ -26,8 +26,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * UrlEncode
- * @author Windy
- * @date 2021-5-02 13:15
+ * @author Windy.Gu
+ * @date 2022-1-02 13:15
  */
 @SuppressWarnings("unchecked")
 public class JmeterRsaSignByPrivateKey extends AbstractFunction {

@@ -5,7 +5,7 @@ import java.net.URLEncoder;
 public class UrlEncodeUtil {
     /**
      * Urlencode 根据入参返回encode后的参数
-     * @author Windy
+     * @author Windy.Gu
      * @date 2021-5-02 13:15
      */
     public static String urlencode(String api, String body) {
