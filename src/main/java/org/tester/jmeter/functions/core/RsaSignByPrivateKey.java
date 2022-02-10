@@ -2,6 +2,8 @@ package org.tester.jmeter.functions.core;
 
 import org.apache.commons.codec.CharEncoding;
 import org.apache.commons.codec.binary.Base64;
+
+import java.nio.charset.StandardCharsets;
 import java.security.PrivateKey;
 import java.security.KeyFactory;
 import java.security.spec.PKCS8EncodedKeySpec;
@@ -43,6 +45,7 @@ public class RsaSignByPrivateKey {
         System.out.println("sortedUnSignDate:" + sortedUnSignDate);
         StringBuffer orderedSB = new StringBuffer();
         if (sortedUnSignDate != null){
+            // 将{}数据进行去除外部{}，不包括内部的{}，并进行拼接
             sortedUnSignDate.forEach((key, value)  -> traverse(orderedSB, key, value));
         }
         String orderedRequests = orderedSB.substring(0, orderedSB.length() - 1);
@@ -53,7 +56,7 @@ public class RsaSignByPrivateKey {
             return "";
         }
 
-        byte[] bytes_1 = orderedRequests.getBytes(CharEncoding.UTF_8);
+        byte[] bytes_1 = orderedRequests.getBytes(StandardCharsets.UTF_8);
         signature.update(bytes_1);
         byte[] signed = signature.sign();
         return Base64.encodeBase64String(signed);

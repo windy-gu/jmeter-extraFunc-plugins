@@ -23,7 +23,7 @@ public class RsaEncryptUtils {
      * @date 2022-2-10 13:15
      */
     private static final Logger log = LoggerFactory.getLogger(RsaEncryptUtils.class);
-//    public static final String SIGNATURE_ALGORITHM = "SHA1withRSA";
+    public static final String SIGNATURE_ALGORITHM = "SHA1withRSA";
 
     public static KeyPair generateKeyPair() throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
