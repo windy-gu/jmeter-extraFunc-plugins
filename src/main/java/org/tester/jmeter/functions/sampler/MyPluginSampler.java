@@ -9,10 +9,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.jmeter.samplers.Entry;
 import org.apache.jmeter.samplers.SampleResult;
+import org.apache.jmeter.testelement.TestStateListener;
 import org.apache.jorphan.logging.LoggingManager;
 import org.apache.log.Logger;
 
-public class MyPluginSampler extends AbstractSampler implements Serializable {
+public class MyPluginSampler extends AbstractSampler implements TestStateListener {
     private static final long serialVersionUID = 230l;
 
     private static final Logger log = LoggingManager.getLoggerForClass();
@@ -62,7 +63,7 @@ public class MyPluginSampler extends AbstractSampler implements Serializable {
         return getPropertyAsString(useKeepAlive);
     }
 
-//    //从gui获取postBody输入的数据
+    //从gui获取postBody输入的数据
 //    public String getPostBodyContent(){
 //        return getPropertyAsString(postBodyContent);
 //    }
@@ -84,6 +85,7 @@ public class MyPluginSampler extends AbstractSampler implements Serializable {
         log.debug(tn+" ("+classCount.get()+") "+t1+" "+s+" "+th);
     }
 
+    // 该方法是Jmeter实现对目标系统发起请求实际工作的地方
     @Override
     public SampleResult sample(Entry entry){
         trace("sample()");
@@ -133,5 +135,32 @@ public class MyPluginSampler extends AbstractSampler implements Serializable {
         res.setSuccessful(isOK);
         return res;
     }
+
+    // 此方法是本地执行时的调用开始方法
+    @Override
+    public void testStarted(){
+
+    }
+
+    // 此方法是远程执行时的调用开始方法
+    @Override
+    public void testStarted(String s){
+
+    }
+
+    // 此方法是本地执行时的调用结束方法
+    @Override
+    public void testEnded(){
+        this.testEnded("local");
+
+    }
+
+    // 此方法是远程执行时的调用结束方法
+    @Override
+    public void testEnded(String s){
+
+    }
+
+
 
 }

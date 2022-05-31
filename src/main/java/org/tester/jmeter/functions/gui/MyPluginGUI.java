@@ -1,7 +1,7 @@
 package org.tester.jmeter.functions.gui;
 
 import org.tester.jmeter.functions.sampler.MyPluginSampler;
-import org.apache.jmeter.config.Arguments;
+import org.apache.jmeter.config.Arguments;  //这个类是用来定义和访问参数的
 import org.apache.jmeter.config.gui.ArgumentsPanel;
 import org.apache.jmeter.gui.util.HorizontalPanel;
 import org.apache.jmeter.gui.util.VerticalPanel;
@@ -138,6 +138,7 @@ public class MyPluginGUI extends AbstractSamplerGui implements ItemListener {
         createPanel();
     }
 
+    // 构造方法初始化
     public MyPluginGUI(){
         super();
         init();
@@ -148,11 +149,16 @@ public class MyPluginGUI extends AbstractSamplerGui implements ItemListener {
         throw new IllegalStateException("this is should not be called");
     }
 
+    // 在sample 中显示的名称
     @Override
     public String getStaticLabel(){
         return "My Test Sample";
     }
 
+    /**
+     * 该方法会在reset新界面的时候调用，这里可以填入界面控件中需要显示的一系诶缺省的值（默认值）
+     *
+     */
     @Override
     public void clearGui(){
         super.clearGui();
@@ -200,6 +206,11 @@ public class MyPluginGUI extends AbstractSamplerGui implements ItemListener {
         testElement.setProperty(MyPluginSampler.method,method.getText());
     }
 
+    /**
+     * 界面与Sample之间的数据交换
+     * @param element
+     */
+    // 界面与Sample之间的数据交换
     @Override
     public void configure(TestElement element){
         super.configure(element);

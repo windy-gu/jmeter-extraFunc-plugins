@@ -1,6 +1,5 @@
 package org.tester.jmeter.functions;
 
-import lombok.SneakyThrows;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -20,7 +19,6 @@ import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
 import java.util.*;
 import java.util.Comparator;
 import java.util.TreeMap;
-
 import org.slf4j.LoggerFactory;
 
 
@@ -54,7 +52,6 @@ public class JmeterRsaSignByPrivateKey extends AbstractFunction {
      * @return 返回sign加密后的数据
      * @throws InvalidVariableException
      */
-    @SneakyThrows
     @Override
     public String execute(SampleResult sampleResult, Sampler sampler) throws InvalidVariableException {
         if (!(sampler instanceof HTTPSamplerProxy)) {
@@ -66,7 +63,11 @@ public class JmeterRsaSignByPrivateKey extends AbstractFunction {
         String unSignData = this.unSignData.execute().trim();
         String privateKey = this.privateKey.execute().trim();
         log.info("待加签内容={}", unSignData);
-        dataSign = RsaSignByPrivateKey.rsaSignByPrivateKey(unSignData, privateKey);
+        try {
+            dataSign = RsaSignByPrivateKey.rsaSignByPrivateKey(unSignData, privateKey);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return dataSign;
     }
 
