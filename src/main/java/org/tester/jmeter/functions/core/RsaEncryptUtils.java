@@ -19,7 +19,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class RsaEncryptUtils {
     /**
      * RSA 公钥加密/解密工具
-     * @author Windy
+     * @author Windy.Gu
      * @date 2022-2-10 13:15
      */
     private static final Logger log = LoggerFactory.getLogger(RsaEncryptUtils.class);

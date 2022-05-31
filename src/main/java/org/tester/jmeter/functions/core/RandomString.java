@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * @author Windy
+ * @author Windy.Gu
  * @date 2019-12-02 11:21
  */
 public class RandomString {

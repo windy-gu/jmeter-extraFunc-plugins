@@ -19,7 +19,7 @@ public class RsaSignByPrivateKey {
     public static final String SIGNATURE_ALGORITHM = "SHA1withRSA";
     /**
      * RSA 私钥加签
-     * @author Windy
+     * @author Windy.Gu
      * @date 2022-1-02 13:15
      */
 

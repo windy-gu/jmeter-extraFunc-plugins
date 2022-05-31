@@ -3,7 +3,7 @@ package org.tester.jmeter.functions.core;
 import java.util.*;
 
 /**
- * @author Windy
+ * @author Windy.Gu
  * @date 2019-12-04 13:26
  * 生成标准的身份证号码
  */
